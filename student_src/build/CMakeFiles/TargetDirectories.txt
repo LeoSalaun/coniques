@@ -1,0 +1,3 @@
+/home/mailis/Conique/coniques/student_src/build/CMakeFiles/conic.dir
+/home/mailis/Conique/coniques/student_src/build/CMakeFiles/edit_cache.dir
+/home/mailis/Conique/coniques/student_src/build/CMakeFiles/rebuild_cache.dir
