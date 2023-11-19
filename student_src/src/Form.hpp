@@ -13,14 +13,22 @@
 
 #include "Entry.hpp"
 #include "Directory.hpp"
+#include "Geogebra_conics.hpp"
 
 class Form {
 
-private :
-	std::vector<Eigen::VectoXd> m_points;
+protected :
+	std::vector<Eigen::VectorXd> m_points;
 
 
 public :
-	void display() const;
-
-}
+	Form(const std::vector<Eigen::VectorXd> points);
+	Form();
+	~Form();
+	
+	virtual void display(Viewer_conic viewer) const;
+	
+	std::vector<Eigen::VectorXd> getPoints();
+	inline void setPoints(std::vector<Eigen::VectorXd> points) {m_points = points;}
+	inline void addPoint(Eigen::VectorXd pt) {m_points.push_back(pt);};
+};
