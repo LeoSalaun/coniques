@@ -1,7 +1,7 @@
 CMakeFiles/conic.dir/src/Entry.cpp.o: \
- /home/leo/Documents/IMAC/Maths_info/Projet/coniques/student_src/src/Entry.cpp \
+ /home/mailis/Conique/coniques/student_src/src/Entry.cpp \
  /usr/include/stdc-predef.h \
- /home/leo/Documents/IMAC/Maths_info/Projet/coniques/student_src/src/Entry.hpp \
+ /home/mailis/Conique/coniques/student_src/src/Entry.hpp \
  /usr/include/c++/11/iostream \
  /usr/include/x86_64-linux-gnu/c++/11/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/11/bits/os_defines.h \
