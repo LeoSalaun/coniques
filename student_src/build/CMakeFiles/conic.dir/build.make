@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/leo/Documents/IMAC/Maths_info/Projet/coniques/student_src
+CMAKE_SOURCE_DIR = /home/mailis/Conique/coniques/student_src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/leo/Documents/IMAC/Maths_info/Projet/coniques/student_src/build
+CMAKE_BINARY_DIR = /home/mailis/Conique/coniques/student_src/build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/conic.dir/depend.make
@@ -72,58 +72,58 @@ include CMakeFiles/conic.dir/flags.make
 CMakeFiles/conic.dir/src/main.cpp.o: CMakeFiles/conic.dir/flags.make
 CMakeFiles/conic.dir/src/main.cpp.o: ../src/main.cpp
 CMakeFiles/conic.dir/src/main.cpp.o: CMakeFiles/conic.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/leo/Documents/IMAC/Maths_info/Projet/coniques/student_src/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/conic.dir/src/main.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/conic.dir/src/main.cpp.o -MF CMakeFiles/conic.dir/src/main.cpp.o.d -o CMakeFiles/conic.dir/src/main.cpp.o -c /home/leo/Documents/IMAC/Maths_info/Projet/coniques/student_src/src/main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mailis/Conique/coniques/student_src/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/conic.dir/src/main.cpp.o"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/conic.dir/src/main.cpp.o -MF CMakeFiles/conic.dir/src/main.cpp.o.d -o CMakeFiles/conic.dir/src/main.cpp.o -c /home/mailis/Conique/coniques/student_src/src/main.cpp
 
 CMakeFiles/conic.dir/src/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/conic.dir/src/main.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/leo/Documents/IMAC/Maths_info/Projet/coniques/student_src/src/main.cpp > CMakeFiles/conic.dir/src/main.cpp.i
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/mailis/Conique/coniques/student_src/src/main.cpp > CMakeFiles/conic.dir/src/main.cpp.i
 
 CMakeFiles/conic.dir/src/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/conic.dir/src/main.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/leo/Documents/IMAC/Maths_info/Projet/coniques/student_src/src/main.cpp -o CMakeFiles/conic.dir/src/main.cpp.s
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/mailis/Conique/coniques/student_src/src/main.cpp -o CMakeFiles/conic.dir/src/main.cpp.s
 
 CMakeFiles/conic.dir/src/Geogebra_conics.cpp.o: CMakeFiles/conic.dir/flags.make
 CMakeFiles/conic.dir/src/Geogebra_conics.cpp.o: ../src/Geogebra_conics.cpp
 CMakeFiles/conic.dir/src/Geogebra_conics.cpp.o: CMakeFiles/conic.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/leo/Documents/IMAC/Maths_info/Projet/coniques/student_src/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/conic.dir/src/Geogebra_conics.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/conic.dir/src/Geogebra_conics.cpp.o -MF CMakeFiles/conic.dir/src/Geogebra_conics.cpp.o.d -o CMakeFiles/conic.dir/src/Geogebra_conics.cpp.o -c /home/leo/Documents/IMAC/Maths_info/Projet/coniques/student_src/src/Geogebra_conics.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mailis/Conique/coniques/student_src/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/conic.dir/src/Geogebra_conics.cpp.o"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/conic.dir/src/Geogebra_conics.cpp.o -MF CMakeFiles/conic.dir/src/Geogebra_conics.cpp.o.d -o CMakeFiles/conic.dir/src/Geogebra_conics.cpp.o -c /home/mailis/Conique/coniques/student_src/src/Geogebra_conics.cpp
 
 CMakeFiles/conic.dir/src/Geogebra_conics.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/conic.dir/src/Geogebra_conics.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/leo/Documents/IMAC/Maths_info/Projet/coniques/student_src/src/Geogebra_conics.cpp > CMakeFiles/conic.dir/src/Geogebra_conics.cpp.i
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/mailis/Conique/coniques/student_src/src/Geogebra_conics.cpp > CMakeFiles/conic.dir/src/Geogebra_conics.cpp.i
 
 CMakeFiles/conic.dir/src/Geogebra_conics.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/conic.dir/src/Geogebra_conics.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/leo/Documents/IMAC/Maths_info/Projet/coniques/student_src/src/Geogebra_conics.cpp -o CMakeFiles/conic.dir/src/Geogebra_conics.cpp.s
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/mailis/Conique/coniques/student_src/src/Geogebra_conics.cpp -o CMakeFiles/conic.dir/src/Geogebra_conics.cpp.s
 
 CMakeFiles/conic.dir/src/Entry.cpp.o: CMakeFiles/conic.dir/flags.make
 CMakeFiles/conic.dir/src/Entry.cpp.o: ../src/Entry.cpp
 CMakeFiles/conic.dir/src/Entry.cpp.o: CMakeFiles/conic.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/leo/Documents/IMAC/Maths_info/Projet/coniques/student_src/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/conic.dir/src/Entry.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/conic.dir/src/Entry.cpp.o -MF CMakeFiles/conic.dir/src/Entry.cpp.o.d -o CMakeFiles/conic.dir/src/Entry.cpp.o -c /home/leo/Documents/IMAC/Maths_info/Projet/coniques/student_src/src/Entry.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mailis/Conique/coniques/student_src/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/conic.dir/src/Entry.cpp.o"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/conic.dir/src/Entry.cpp.o -MF CMakeFiles/conic.dir/src/Entry.cpp.o.d -o CMakeFiles/conic.dir/src/Entry.cpp.o -c /home/mailis/Conique/coniques/student_src/src/Entry.cpp
 
 CMakeFiles/conic.dir/src/Entry.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/conic.dir/src/Entry.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/leo/Documents/IMAC/Maths_info/Projet/coniques/student_src/src/Entry.cpp > CMakeFiles/conic.dir/src/Entry.cpp.i
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/mailis/Conique/coniques/student_src/src/Entry.cpp > CMakeFiles/conic.dir/src/Entry.cpp.i
 
 CMakeFiles/conic.dir/src/Entry.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/conic.dir/src/Entry.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/leo/Documents/IMAC/Maths_info/Projet/coniques/student_src/src/Entry.cpp -o CMakeFiles/conic.dir/src/Entry.cpp.s
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/mailis/Conique/coniques/student_src/src/Entry.cpp -o CMakeFiles/conic.dir/src/Entry.cpp.s
 
 CMakeFiles/conic.dir/src/Directory.cpp.o: CMakeFiles/conic.dir/flags.make
 CMakeFiles/conic.dir/src/Directory.cpp.o: ../src/Directory.cpp
 CMakeFiles/conic.dir/src/Directory.cpp.o: CMakeFiles/conic.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/leo/Documents/IMAC/Maths_info/Projet/coniques/student_src/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/conic.dir/src/Directory.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/conic.dir/src/Directory.cpp.o -MF CMakeFiles/conic.dir/src/Directory.cpp.o.d -o CMakeFiles/conic.dir/src/Directory.cpp.o -c /home/leo/Documents/IMAC/Maths_info/Projet/coniques/student_src/src/Directory.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mailis/Conique/coniques/student_src/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/conic.dir/src/Directory.cpp.o"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/conic.dir/src/Directory.cpp.o -MF CMakeFiles/conic.dir/src/Directory.cpp.o.d -o CMakeFiles/conic.dir/src/Directory.cpp.o -c /home/mailis/Conique/coniques/student_src/src/Directory.cpp
 
 CMakeFiles/conic.dir/src/Directory.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/conic.dir/src/Directory.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/leo/Documents/IMAC/Maths_info/Projet/coniques/student_src/src/Directory.cpp > CMakeFiles/conic.dir/src/Directory.cpp.i
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/mailis/Conique/coniques/student_src/src/Directory.cpp > CMakeFiles/conic.dir/src/Directory.cpp.i
 
 CMakeFiles/conic.dir/src/Directory.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/conic.dir/src/Directory.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/leo/Documents/IMAC/Maths_info/Projet/coniques/student_src/src/Directory.cpp -o CMakeFiles/conic.dir/src/Directory.cpp.s
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/mailis/Conique/coniques/student_src/src/Directory.cpp -o CMakeFiles/conic.dir/src/Directory.cpp.s
 
 # Object files for target conic
 conic_OBJECTS = \
@@ -141,7 +141,7 @@ conic: CMakeFiles/conic.dir/src/Entry.cpp.o
 conic: CMakeFiles/conic.dir/src/Directory.cpp.o
 conic: CMakeFiles/conic.dir/build.make
 conic: CMakeFiles/conic.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/leo/Documents/IMAC/Maths_info/Projet/coniques/student_src/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable conic"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/mailis/Conique/coniques/student_src/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable conic"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/conic.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -153,6 +153,6 @@ CMakeFiles/conic.dir/clean:
 .PHONY : CMakeFiles/conic.dir/clean
 
 CMakeFiles/conic.dir/depend:
-	cd /home/leo/Documents/IMAC/Maths_info/Projet/coniques/student_src/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/leo/Documents/IMAC/Maths_info/Projet/coniques/student_src /home/leo/Documents/IMAC/Maths_info/Projet/coniques/student_src /home/leo/Documents/IMAC/Maths_info/Projet/coniques/student_src/build /home/leo/Documents/IMAC/Maths_info/Projet/coniques/student_src/build /home/leo/Documents/IMAC/Maths_info/Projet/coniques/student_src/build/CMakeFiles/conic.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/mailis/Conique/coniques/student_src/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/mailis/Conique/coniques/student_src /home/mailis/Conique/coniques/student_src /home/mailis/Conique/coniques/student_src/build /home/mailis/Conique/coniques/student_src/build /home/mailis/Conique/coniques/student_src/build/CMakeFiles/conic.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/conic.dir/depend
 

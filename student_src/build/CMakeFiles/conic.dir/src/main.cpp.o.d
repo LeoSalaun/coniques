@@ -1,5 +1,5 @@
 CMakeFiles/conic.dir/src/main.cpp.o: \
- /home/leo/Documents/IMAC/Maths_info/Projet/coniques/student_src/src/main.cpp \
+ /home/mailis/Conique/coniques/student_src/src/main.cpp \
  /usr/include/stdc-predef.h /usr/include/c++/11/iostream \
  /usr/include/x86_64-linux-gnu/c++/11/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/11/bits/os_defines.h \
@@ -404,9 +404,9 @@ CMakeFiles/conic.dir/src/main.cpp.o: \
  /usr/include/eigen3/Eigen/src/Eigenvalues/GeneralizedEigenSolver.h \
  /usr/include/eigen3/Eigen/src/Eigenvalues/./RealQZ.h \
  /usr/include/eigen3/Eigen/src/Eigenvalues/MatrixBaseEigenvalues.h \
- /home/leo/Documents/IMAC/Maths_info/Projet/coniques/student_src/src/Geogebra_conics.hpp \
+ /home/mailis/Conique/coniques/student_src/src/Geogebra_conics.hpp \
  /usr/include/c++/11/list /usr/include/c++/11/bits/stl_list.h \
  /usr/include/c++/11/bits/allocated_ptr.h \
  /usr/include/c++/11/bits/list.tcc \
- /home/leo/Documents/IMAC/Maths_info/Projet/coniques/student_src/src/Entry.hpp \
- /home/leo/Documents/IMAC/Maths_info/Projet/coniques/student_src/src/Directory.hpp
+ /home/mailis/Conique/coniques/student_src/src/Entry.hpp \
+ /home/mailis/Conique/coniques/student_src/src/Directory.hpp
