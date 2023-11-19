@@ -1,5 +1,7 @@
 #include <iostream>
 #include <vector>
+#include <chrono>
+#include <random>
 
 #include <Eigen/Dense>
 
@@ -7,34 +9,6 @@
 
 ////////////////////////////////////////////
 // Temporary
-
-Eigen::VectorXd gaussSeidel(const Eigen::MatrixXd &A, const Eigen::VectorXd &b, const uint nbIter)
-{
-	// initial solution 
-	Eigen::VectorXd x(b);
-
-	// iterations
-	for(uint iter=0; iter<nbIter; ++iter)
-	for(int i=0; i<A.rows(); ++i){
-		double sum = 0.0;
-		for(int j=0; j<i; ++j)          sum += A(i,j)*x(j);
-		for(int j=i+1; j<A.cols(); ++j)	sum += A(i,j)*x(j);
-		x(i) = (b(i)-sum)/A(i,i);
-	}
-
-	return x;
-}
-
-Eigen::MatrixXd buildDiagonalStrictMatrix(const size_t n, double alpha){
-	Eigen::MatrixXd A = Eigen::MatrixXd::Random(n,n);
-	A.diagonal() = alpha * Eigen::VectorXd::Ones(n);
-	return A;
-}
-
-unsigned int getRank(const Eigen::MatrixXd &A){
-	Eigen::FullPivLU<Eigen::MatrixXd> lu_decomp(A);
-	return lu_decomp.rank();
-}
 
 Eigen::MatrixXd getMatrixFromPoints(const std::vector<Eigen::VectorXd> &points) {
 	Eigen::MatrixXd A(points.size(),6);
@@ -49,13 +23,11 @@ Eigen::MatrixXd getMatrixFromPoints(const std::vector<Eigen::VectorXd> &points) 
 	return A;
 }
 
-Eigen::VectorXd getConicFromPoints(const std::vector<Eigen::VectorXd> &points, const uint &nbIter) {
+Eigen::VectorXd getConicFromPoints(const std::vector<Eigen::VectorXd> &points) {
 	Eigen::MatrixXd A = getMatrixFromPoints(points);
 	std::cout << A << std::endl;
-	Eigen::VectorXd b(6);
-	b << 0.0001, 0.0001, 0.0001, 0.0001, 0.0001, 0.0001;
-	std::cout << b << std::endl;
-	return gaussSeidel(A, b, nbIter);
+	Eigen::JacobiSVD<Eigen::MatrixXd> svd (A, Eigen::ComputeThinU | Eigen::ComputeFullV);
+	return svd.matrixV().rightCols (1);
 }
 
 ////////////////////////////////////////////
@@ -73,30 +45,28 @@ int main()
   viewer.show_value(false);
   viewer.show_label(true);
 
-  // draw points
-  Eigen::VectorXd pt1(2), pt2(2), pt3(2), pt4(2), pt5(2);
-  pt1 <<  1.5,  2.0;
-  pt2 <<  3.0,  1.0;
-  pt3 << -2.0, -1.0;
-  pt4 << -1.0, -2.0;
-  pt5 <<  3.0, -1.0;
+  //aleatoire points
+  // select a random generator engine and a distribution
+	unsigned seed = std::chrono::system_clock::now().time_since_epoch().count();
+	std::default_random_engine generator(seed);
+	std::uniform_real_distribution<float> distrib(-4,4);
 
-  viewer.push_point(pt1, "p1", 200,0,0);
-  viewer.push_point(pt2, "p2", 200,0,0);
-  viewer.push_point(pt3, "p3", 200,0,0);
-  viewer.push_point(pt4, "p4", 200,0,0);
-  viewer.push_point(pt5, "p5", 200,0,0);
-  
-  std::vector<Eigen::VectorXd> points = {pt1, pt2, pt3, pt4, pt5};
+  int nombreDePoints = 5;
 
-  // draw line
-  viewer.push_line(pt1, pt2-pt1,  200,200,0);
+  std::vector<Eigen::VectorXd> listePoints;
+
+  for (int i = 0; i < nombreDePoints; ++i) {
+    Eigen::VectorXd point(2);
+    point << distrib(generator), distrib(generator);
+    listePoints.push_back(point);
+    std::string nom = "pt" + std::to_string(i +1);
+    viewer.push_point(listePoints[i].transpose(), nom, 200,0,0);
+  }
 
   // draw conic
   //Eigen::VectorXd conic(6);
   //conic << -1.4, -0.3, -1, -0.6, 0.0, 0.8;
-  uint nbIter = 1;
-  Eigen::VectorXd conic = getConicFromPoints(points,nbIter);
+  Eigen::VectorXd conic = getConicFromPoints(listePoints);
   viewer.push_conic(conic, 0,0,200);
 
   // render
@@ -105,4 +75,3 @@ int main()
 
   return 0;
 }
-
