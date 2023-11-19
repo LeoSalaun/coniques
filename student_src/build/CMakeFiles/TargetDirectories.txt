@@ -1,0 +1,3 @@
+/home/leo/Documents/IMAC/Maths_info/Projet/coniques/student_src/build/CMakeFiles/conic.dir
+/home/leo/Documents/IMAC/Maths_info/Projet/coniques/student_src/build/CMakeFiles/edit_cache.dir
+/home/leo/Documents/IMAC/Maths_info/Projet/coniques/student_src/build/CMakeFiles/rebuild_cache.dir
