@@ -11,8 +11,6 @@
 
 #include <Eigen/Dense>
 
-#include "Entry.hpp"
-#include "Directory.hpp"
 #include "Geogebra_conics.hpp"
 
 class Form {
@@ -28,7 +26,7 @@ public :
 	
 	virtual void display(Viewer_conic viewer) const;
 	
-	std::vector<Eigen::VectorXd> getPoints();
+	inline std::vector<Eigen::VectorXd> getPoints() const {return m_points;};
 	inline void setPoints(std::vector<Eigen::VectorXd> points) {m_points = points;}
 	inline void addPoint(Eigen::VectorXd pt) {m_points.push_back(pt);};
 };

@@ -11,9 +11,9 @@ Form::Form(){
 }
 
 Form::~Form(){
-	delete[] m_points;
+	m_points.clear();
 }
 
-std::vector<Eigen::VectorXd> Form::getPoints() {
-	return m_points;
-}
+//std::vector<Eigen::VectorXd> Form::getPoints() const {
+//	return m_points;
+//}

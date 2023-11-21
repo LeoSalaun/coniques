@@ -11,16 +11,19 @@
 
 #include <Eigen/Dense>
 
-#include "Entry.hpp"
-#include "Directory.hpp"
+#include "Form.hpp"
 
 
 
 class Conic : public Form {
 
 public :
-	Eigen::MatrixXd getMatrixFromPoints();
-	Eigen::VectorXd getConicFromPoints();
-	void display(Viewer_conic viewer);
+	Conic(const std::vector<Eigen::VectorXd> points);
+	Conic();
+	~Conic();
+	
+	Eigen::MatrixXd getMatrixFromPoints() const;
+	Eigen::VectorXd getConicFromPoints() const;
+	void display(Viewer_conic viewer) const override;
 
 };
