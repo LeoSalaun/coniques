@@ -6,7 +6,7 @@
 Conic::Conic(const std::vector<Eigen::VectorXd> points)
 	: Shape(points) {
 	for (const auto& point : points) {
-        assert(point.size() == 2);
+        assert(point.size() == 2 && "Erreur dans la définition des coordonnées des points");
     }
 }
 
@@ -19,8 +19,8 @@ Conic::~Conic() {
 
 Eigen::MatrixXd Conic::getMatrixFromPoints() const {
 	for (const auto& point : m_points) {
-        assert(point.size() == 2);
-    }
+        	assert(point.size() == 2 && "Erreur dans la définition des coordonnées des points");
+    	}
 
 	size_t nbPoints = m_points.size();
 	Eigen::MatrixXd A(nbPoints,6);
@@ -43,8 +43,8 @@ Eigen::VectorXd Conic::getConicFromPoints() const {
 }
 
 Eigen::VectorXd Conic::getLineCoeffFromPoints(const Eigen::VectorXd &pt1, const Eigen::VectorXd &pt2) {
-	assert(pt1.size() == 2);
-    assert(pt2.size() == 2);
+	assert(pt1.size() == 2 && "Erreur dans la définition des coordonnées des points");
+    	assert(pt2.size() == 2 && "Erreur dans la définition des coordonnées des points");
 
 	Eigen::VectorXd coeff(2);
 	double m = (pt1(1)-pt2(1))/(pt1(0)-pt2(0));
@@ -54,8 +54,8 @@ Eigen::VectorXd Conic::getLineCoeffFromPoints(const Eigen::VectorXd &pt1, const 
 }
 
 Eigen::VectorXd Conic::getIntersectionFromLines(const Eigen::VectorXd &l1, const Eigen::VectorXd &l2) {
-	assert(l1.size() == 2);
-    assert(l2.size() == 2);
+	assert(l1.size() == 2 && "Erreur dans la définition des coefficients des droites");
+    	assert(l2.size() == 2 && "Erreur dans la définition des coefficients des droites");
 	
 	Eigen::VectorXd ptIntersect(2);
 	double x = (-l1(1)+l2(1))/(l1(0)-l2(0));
@@ -66,8 +66,8 @@ Eigen::VectorXd Conic::getIntersectionFromLines(const Eigen::VectorXd &l1, const
 
 void Conic::addPointsToConic(std::vector<Eigen::VectorXd> listePoints, int nbPoints, Viewer_conic &viewer){
 	if (nbPoints < 5) {
-        throw std::invalid_argument("Il n'y a pas suffisamment de points pour construire une conique.");
-    }
+        	throw std::invalid_argument("Il n'y a pas suffisamment de points pour construire une conique.");
+    	}
 	
 	for (int i = 0; i < nbPoints; ++i) {
 		Eigen::VectorXd currentLine(2), pointIntersect(2), diag1(2), diag2(2), diag3(2);
@@ -86,4 +86,27 @@ void Conic::addPointsToConic(std::vector<Eigen::VectorXd> listePoints, int nbPoi
 
 void Conic::display(Viewer_conic &viewer) const {
 	viewer.push_conic(getConicFromPoints(), 0,0,200);
+}
+
+/////////////////// Tentative d'implémentation des faisceaux
+
+Conic &Conic::operator*(double alpha) const {
+	Conic conique;
+	for (size_t i=0 ; i<m_points.size() ; i++) {
+		conique.addPoint(m_points[i]*alpha);
+	}
+	return conique;
+}
+
+Conic Conic::operator+(Conic conique) const {
+	assert(m_points.size() == (conique.getPoints()).size() && "Vous ne pouvez additionner deux coniques ayant un nombre de points différents.");
+	Conic res;
+	for (size_t i=0 ; i<m_points.size() ; i++) {
+		res.addPoint(m_points[i]+conique.getPoint(i));
+	}
+	return res;
+}
+
+Conic Conic::faisceau(Conic conique, double t) const {
+	return (*this)*std::cos(t) + conique*std::sin(t);
 }
