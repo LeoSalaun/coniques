@@ -129,6 +129,30 @@ conic/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/conic.dir/build.make CMakeFiles/conic.dir/build
 .PHONY : conic/fast
 
+src/Conic.o: src/Conic.cpp.o
+.PHONY : src/Conic.o
+
+# target to build an object file
+src/Conic.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/conic.dir/build.make CMakeFiles/conic.dir/src/Conic.cpp.o
+.PHONY : src/Conic.cpp.o
+
+src/Conic.i: src/Conic.cpp.i
+.PHONY : src/Conic.i
+
+# target to preprocess a source file
+src/Conic.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/conic.dir/build.make CMakeFiles/conic.dir/src/Conic.cpp.i
+.PHONY : src/Conic.cpp.i
+
+src/Conic.s: src/Conic.cpp.s
+.PHONY : src/Conic.s
+
+# target to generate assembly for a file
+src/Conic.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/conic.dir/build.make CMakeFiles/conic.dir/src/Conic.cpp.s
+.PHONY : src/Conic.cpp.s
+
 src/Directory.o: src/Directory.cpp.o
 .PHONY : src/Directory.o
 
@@ -201,6 +225,30 @@ src/Geogebra_conics.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/conic.dir/build.make CMakeFiles/conic.dir/src/Geogebra_conics.cpp.s
 .PHONY : src/Geogebra_conics.cpp.s
 
+src/Shape.o: src/Shape.cpp.o
+.PHONY : src/Shape.o
+
+# target to build an object file
+src/Shape.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/conic.dir/build.make CMakeFiles/conic.dir/src/Shape.cpp.o
+.PHONY : src/Shape.cpp.o
+
+src/Shape.i: src/Shape.cpp.i
+.PHONY : src/Shape.i
+
+# target to preprocess a source file
+src/Shape.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/conic.dir/build.make CMakeFiles/conic.dir/src/Shape.cpp.i
+.PHONY : src/Shape.cpp.i
+
+src/Shape.s: src/Shape.cpp.s
+.PHONY : src/Shape.s
+
+# target to generate assembly for a file
+src/Shape.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/conic.dir/build.make CMakeFiles/conic.dir/src/Shape.cpp.s
+.PHONY : src/Shape.cpp.s
+
 src/main.o: src/main.cpp.o
 .PHONY : src/main.o
 
@@ -234,6 +282,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... conic"
+	@echo "... src/Conic.o"
+	@echo "... src/Conic.i"
+	@echo "... src/Conic.s"
 	@echo "... src/Directory.o"
 	@echo "... src/Directory.i"
 	@echo "... src/Directory.s"
@@ -243,6 +294,9 @@ help:
 	@echo "... src/Geogebra_conics.o"
 	@echo "... src/Geogebra_conics.i"
 	@echo "... src/Geogebra_conics.s"
+	@echo "... src/Shape.o"
+	@echo "... src/Shape.i"
+	@echo "... src/Shape.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"

@@ -11,11 +11,11 @@
 
 #include <Eigen/Dense>
 
-#include "Form.hpp"
+#include "Shape.hpp"
 
 
 
-class Conic : public Form {
+class Conic : public Shape {
 
 public :
 	Conic(const std::vector<Eigen::VectorXd> points);
@@ -24,6 +24,9 @@ public :
 	
 	Eigen::MatrixXd getMatrixFromPoints() const;
 	Eigen::VectorXd getConicFromPoints() const;
+	Eigen::VectorXd getLineCoeffFromPoints(const Eigen::VectorXd &pt1, const Eigen::VectorXd &pt2);
+	Eigen::VectorXd getIntersectionFromLines(const Eigen::VectorXd &l1, const Eigen::VectorXd &l2);
+	void addPointsToConic(std::vector<Eigen::VectorXd> listePoints, int nbPoints, Viewer_conic &viewer);
 	void display(Viewer_conic &viewer) const override;
 
 };

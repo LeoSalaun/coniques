@@ -180,8 +180,9 @@ CMakeFiles/conic.dir/src/main.cpp.o: \
  /usr/include/c++/11/bits/random.tcc /usr/include/c++/11/numeric \
  /usr/include/c++/11/bits/stl_numeric.h /usr/include/c++/11/bit \
  /usr/include/c++/11/pstl/glue_numeric_defs.h \
- /usr/include/c++/11/pstl/execution_defs.h \
- /usr/include/eigen3/Eigen/Dense /usr/include/eigen3/Eigen/Core \
+ /usr/include/c++/11/pstl/execution_defs.h /usr/include/c++/11/cassert \
+ /usr/include/assert.h /usr/include/eigen3/Eigen/Dense \
+ /usr/include/eigen3/Eigen/Core \
  /usr/include/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h \
  /usr/include/eigen3/Eigen/src/Core/util/Macros.h \
  /usr/include/eigen3/Eigen/src/Core/util/ConfigureVectorization.h \
@@ -192,8 +193,7 @@ CMakeFiles/conic.dir/src/main.cpp.o: \
  /usr/include/c++/11/stdlib.h /usr/include/c++/11/complex \
  /usr/include/c++/11/sstream /usr/include/c++/11/bits/sstream.tcc \
  /usr/include/eigen3/Eigen/src/Core/util/MKL_support.h \
- /usr/include/c++/11/cstddef /usr/include/c++/11/cassert \
- /usr/include/assert.h /usr/include/c++/11/functional \
+ /usr/include/c++/11/cstddef /usr/include/c++/11/functional \
  /usr/include/c++/11/tuple /usr/include/c++/11/utility \
  /usr/include/c++/11/bits/stl_relops.h /usr/include/c++/11/array \
  /usr/include/c++/11/bits/uses_allocator.h \
@@ -409,4 +409,6 @@ CMakeFiles/conic.dir/src/main.cpp.o: \
  /usr/include/c++/11/bits/allocated_ptr.h \
  /usr/include/c++/11/bits/list.tcc \
  /home/mailis/Conique/coniques/student_src/src/Entry.hpp \
- /home/mailis/Conique/coniques/student_src/src/Directory.hpp
+ /home/mailis/Conique/coniques/student_src/src/Directory.hpp \
+ /home/mailis/Conique/coniques/student_src/src/Shape.hpp \
+ /home/mailis/Conique/coniques/student_src/src/Conic.hpp

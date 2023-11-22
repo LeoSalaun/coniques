@@ -6,5 +6,5 @@ CXX_DEFINES =
 
 CXX_INCLUDES = -I/usr/include/eigen3
 
-CXX_FLAGS = -g -Wall -Wextra -Wpedantic -pedantic-errors
+CXX_FLAGS = -g -Wall -Wextra -Wpedantic -pedantic-errors -fpic
 

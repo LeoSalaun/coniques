@@ -13,12 +13,16 @@
 
 #include "Entry.hpp"
 #include "Directory.hpp"
+#include "Shape.hpp"
 
-class Line : public Forme {
+class Line : public Shape {
 
 public :
-	void display() const override{
-        viewer.push_line(pt1, pt2-pt1, 200,200,0);
-    };
+    Line(const std::vector<Eigen::VectorXd> points);
+	Line();
+	~Line();
+	
+	Eigen::VectorXd getLineCoeffFromPoints(const Eigen::VectorXd &pt1, const Eigen::VectorXd &pt2);
+	void display(Viewer_conic &viewer) const override;
 
-}
+};
