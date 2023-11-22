@@ -1,22 +1,32 @@
 [
 {
   "directory": "/home/mailis/Conique/coniques/student_src/build",
-  "command": "/usr/bin/g++  -I/usr/include/eigen3 -g -Wall -Wextra -Wpedantic -pedantic-errors -o CMakeFiles/conic.dir/src/main.cpp.o -c /home/mailis/Conique/coniques/student_src/src/main.cpp",
+  "command": "/usr/bin/g++  -I/usr/include/eigen3 -g -Wall -Wextra -Wpedantic -pedantic-errors -fpic -o CMakeFiles/conic.dir/src/main.cpp.o -c /home/mailis/Conique/coniques/student_src/src/main.cpp",
   "file": "/home/mailis/Conique/coniques/student_src/src/main.cpp"
 },
 {
   "directory": "/home/mailis/Conique/coniques/student_src/build",
-  "command": "/usr/bin/g++  -I/usr/include/eigen3 -g -Wall -Wextra -Wpedantic -pedantic-errors -o CMakeFiles/conic.dir/src/Geogebra_conics.cpp.o -c /home/mailis/Conique/coniques/student_src/src/Geogebra_conics.cpp",
+  "command": "/usr/bin/g++  -I/usr/include/eigen3 -g -Wall -Wextra -Wpedantic -pedantic-errors -fpic -o CMakeFiles/conic.dir/src/Geogebra_conics.cpp.o -c /home/mailis/Conique/coniques/student_src/src/Geogebra_conics.cpp",
   "file": "/home/mailis/Conique/coniques/student_src/src/Geogebra_conics.cpp"
 },
 {
   "directory": "/home/mailis/Conique/coniques/student_src/build",
-  "command": "/usr/bin/g++  -I/usr/include/eigen3 -g -Wall -Wextra -Wpedantic -pedantic-errors -o CMakeFiles/conic.dir/src/Entry.cpp.o -c /home/mailis/Conique/coniques/student_src/src/Entry.cpp",
+  "command": "/usr/bin/g++  -I/usr/include/eigen3 -g -Wall -Wextra -Wpedantic -pedantic-errors -fpic -o CMakeFiles/conic.dir/src/Entry.cpp.o -c /home/mailis/Conique/coniques/student_src/src/Entry.cpp",
   "file": "/home/mailis/Conique/coniques/student_src/src/Entry.cpp"
 },
 {
   "directory": "/home/mailis/Conique/coniques/student_src/build",
-  "command": "/usr/bin/g++  -I/usr/include/eigen3 -g -Wall -Wextra -Wpedantic -pedantic-errors -o CMakeFiles/conic.dir/src/Directory.cpp.o -c /home/mailis/Conique/coniques/student_src/src/Directory.cpp",
+  "command": "/usr/bin/g++  -I/usr/include/eigen3 -g -Wall -Wextra -Wpedantic -pedantic-errors -fpic -o CMakeFiles/conic.dir/src/Directory.cpp.o -c /home/mailis/Conique/coniques/student_src/src/Directory.cpp",
   "file": "/home/mailis/Conique/coniques/student_src/src/Directory.cpp"
+},
+{
+  "directory": "/home/mailis/Conique/coniques/student_src/build",
+  "command": "/usr/bin/g++  -I/usr/include/eigen3 -g -Wall -Wextra -Wpedantic -pedantic-errors -fpic -o CMakeFiles/conic.dir/src/Shape.cpp.o -c /home/mailis/Conique/coniques/student_src/src/Shape.cpp",
+  "file": "/home/mailis/Conique/coniques/student_src/src/Shape.cpp"
+},
+{
+  "directory": "/home/mailis/Conique/coniques/student_src/build",
+  "command": "/usr/bin/g++  -I/usr/include/eigen3 -g -Wall -Wextra -Wpedantic -pedantic-errors -fpic -o CMakeFiles/conic.dir/src/Conic.cpp.o -c /home/mailis/Conique/coniques/student_src/src/Conic.cpp",
+  "file": "/home/mailis/Conique/coniques/student_src/src/Conic.cpp"
 }
 ]

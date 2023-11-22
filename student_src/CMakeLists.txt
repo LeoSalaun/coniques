@@ -18,7 +18,7 @@ endif()
 
 
 # files to compile
-add_executable(conic src/main.cpp src/Geogebra_conics.cpp src/Geogebra_conics.hpp src/Entry.cpp src/Entry.hpp src/Directory.cpp src/Directory.hpp src/Form.cpp src/Form.hpp src/Conic.cpp src/Conic.hpp)
+add_executable(conic src/main.cpp src/Geogebra_conics.cpp src/Geogebra_conics.hpp src/Entry.cpp src/Entry.hpp src/Directory.cpp src/Directory.hpp src/Shape.cpp src/Shape.hpp src/Conic.cpp src/Conic.hpp)
 
 #add_executable(conic)
 
