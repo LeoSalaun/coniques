@@ -63,6 +63,9 @@ int main()
     viewer.push_point(listePoints[i].transpose(), nom, 200,0,0);
   }
 
+  //draw line
+  //viewer.push_line(pt1, pt2-pt1, 200,200,0);
+
   // draw conic
   //Eigen::VectorXd conic(6);
   //conic << -1.4, -0.3, -1, -0.6, 0.0, 0.8;
