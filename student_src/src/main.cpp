@@ -10,7 +10,7 @@
 #include "Conic.hpp"
 
 ////////////////////////////////////////////
-// Temporary
+// Temporary test functions
 
 /*Eigen::MatrixXd getMatrixFromPoints(const std::vector<Eigen::VectorXd> &points) {
 	Eigen::MatrixXd A(points.size(),6);
@@ -49,6 +49,22 @@ Eigen::VectorXd gaussSeidel(const Eigen::MatrixXd &A, const Eigen::VectorXd &b, 
 	return x;
 }
 
+Eigen::VectorXd getLineCoeffFromPoints(const Eigen::VectorXd &pt1, const Eigen::VectorXd &pt2) {
+	Eigen::VectorXd coeff(2);
+	double m = (pt1(1)-pt2(1))/(pt1(0)-pt2(0));
+	double b = pt1(1)-m*pt1(0);
+	coeff << m,b;
+	return coeff;	
+}
+
+Eigen::VectorXd getIntersectionFromLines(const Eigen::VectorXd &l1, const Eigen::VectorXd &l2) {
+	Eigen::VectorXd ptIntersect(2);
+	double x = (-l1(1)+l2(1))/(l1(0)-l2(0));
+	double y = l1(0)*x+l1(1);
+	ptIntersect << x,y;
+	return ptIntersect;	
+}
+
 ////////////////////////////////////////////
 
 int main()
@@ -84,7 +100,7 @@ int main()
 		std::string nom = "pt" + std::to_string(i +1);
 		viewer.push_point(listePoints[i].transpose(), nom, 200,0,0);
 	}
-	conique.display(viewer);
+	//conique.display(viewer);
 
 	// draw conic
 	//Eigen::VectorXd conic(6);
@@ -92,14 +108,24 @@ int main()
 	//Eigen::VectorXd conic = getConicFromPoints(listePoints);
 	//viewer.push_conic(conic, 0,0,200);
 	
+	Conic conique2;
+	
 	//viewer.push_line(conique.getPoint(0), conique.getPoint(1)-conique.getPoint(0),  200,200,0);
-	/*std::vector<Eigen::VectorXd> listePoints2;
+	std::vector<Eigen::VectorXd> listePoints2;
 	for (int i = 0; i < nombreDePoints; ++i) {
-		Eigen::VectorXd point(2);
-		Eigen::MatrixXd A(2,2);
-		A << 
-		// Solve system
-	}*/
+		Eigen::VectorXd currentLine(2), pointIntersect(2), diag1(2), diag2(2), diag3(2);
+		viewer.push_line(listePoints[i], listePoints[(i+1)%nombreDePoints]-listePoints[i],  200,200,0);
+		currentLine = getLineCoeffFromPoints(listePoints[i], listePoints[(i+1)%nombreDePoints]);
+		//Find the two diagonals
+		diag1 = getLineCoeffFromPoints(listePoints[i], listePoints[(i+2)%nombreDePoints]);
+		diag2 = getLineCoeffFromPoints(listePoints[(i+1)%nombreDePoints], listePoints[(i+4)%nombreDePoints]);
+		//Find intersection point
+		pointIntersect = getIntersectionFromLines(diag1, diag2);
+		//Find the last line and the intersection point and add the point
+		diag3 = getLineCoeffFromPoints(listePoints[(i+3)%nombreDePoints], pointIntersect);
+		conique2.addPoint(getIntersectionFromLines(currentLine, diag3));
+	}
+	conique2.display(viewer);
 
 	// render
 	viewer.display(); // on terminal
