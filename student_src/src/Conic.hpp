@@ -24,6 +24,6 @@ public :
 	
 	Eigen::MatrixXd getMatrixFromPoints() const;
 	Eigen::VectorXd getConicFromPoints() const;
-	void display(Viewer_conic viewer) const override;
+	void display(Viewer_conic &viewer) const override;
 
 };

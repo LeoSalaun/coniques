@@ -34,6 +34,6 @@ Eigen::VectorXd Conic::getConicFromPoints() const {
 	return svd.matrixV().rightCols (1);
 }
 
-void Conic::display(Viewer_conic viewer) const {
+void Conic::display(Viewer_conic &viewer) const {
 	viewer.push_conic(getConicFromPoints(), 0,0,200);
 }

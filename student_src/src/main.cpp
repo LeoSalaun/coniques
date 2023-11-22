@@ -32,6 +32,23 @@ Eigen::VectorXd getConicFromPoints(const std::vector<Eigen::VectorXd> &points) {
 	return svd.matrixV().rightCols (1);
 }*/
 
+Eigen::VectorXd gaussSeidel(const Eigen::MatrixXd &A, const Eigen::VectorXd &b, const uint nbIter)
+{
+	// initial solution 
+	Eigen::VectorXd x(b);
+
+	// iterations
+	for(uint iter=0; iter<nbIter; ++iter)
+	for(int i=0; i<A.rows(); ++i){
+		double sum = 0.0;
+		for(int j=0; j<i; ++j)          sum += A(i,j)*x(j);
+		for(int j=i+1; j<A.cols(); ++j)	sum += A(i,j)*x(j);
+		x(i) = (b(i)-sum)/A(i,i);
+	}
+
+	return x;
+}
+
 ////////////////////////////////////////////
 
 int main()
@@ -74,6 +91,15 @@ int main()
 	//conic << -1.4, -0.3, -1, -0.6, 0.0, 0.8;
 	//Eigen::VectorXd conic = getConicFromPoints(listePoints);
 	//viewer.push_conic(conic, 0,0,200);
+	
+	//viewer.push_line(conique.getPoint(0), conique.getPoint(1)-conique.getPoint(0),  200,200,0);
+	/*std::vector<Eigen::VectorXd> listePoints2;
+	for (int i = 0; i < nombreDePoints; ++i) {
+		Eigen::VectorXd point(2);
+		Eigen::MatrixXd A(2,2);
+		A << 
+		// Solve system
+	}*/
 
 	// render
 	viewer.display(); // on terminal

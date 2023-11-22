@@ -22,11 +22,12 @@ protected :
 public :
 	Form(const std::vector<Eigen::VectorXd> points);
 	Form();
-	~Form();
+	~Form() {};
 	
-	virtual void display(Viewer_conic viewer) const;
+	virtual void display(Viewer_conic &viewer) const = 0;
 	
 	inline std::vector<Eigen::VectorXd> getPoints() const {return m_points;};
+	inline Eigen::VectorXd getPoint(const size_t index) const {return m_points[index];};
 	inline void setPoints(std::vector<Eigen::VectorXd> points) {m_points = points;}
 	inline void addPoint(Eigen::VectorXd pt) {m_points.push_back(pt);};
 };
