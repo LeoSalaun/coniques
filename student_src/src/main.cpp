@@ -34,7 +34,7 @@ int main()
 
 	std::vector<Eigen::VectorXd> listePoints;
 	  
-	Conic conique;
+	ConicClass::Conic conique;
 
 	for (long unsigned int i = 0; i < nombreDePoints; ++i) {
 		Eigen::VectorXd point(2);
@@ -54,7 +54,7 @@ int main()
 		throw std::invalid_argument("Il n'y a pas suffisamment de points pour construire une conique.");
 	}
 	
-	Conic conique2;
+	ConicClass::Conic conique2;
 	
 	try {
   		conique2.addPointsToConic(listePoints, nombreDePoints, viewer);
