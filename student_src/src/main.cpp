@@ -76,7 +76,7 @@ int main()
 
 	std::vector<Eigen::VectorXd> listePoints;
 	  
-	Conic conique;
+	ConicClass::Conic conique;
 
 	for (long unsigned int i = 0; i < nombreDePoints; ++i) {
 		Eigen::VectorXd point(2);
@@ -104,7 +104,7 @@ int main()
 	//Eigen::VectorXd conic = getConicFromPoints(listePoints);
 	//viewer.push_conic(conic, 0,0,200);
 	
-	Conic conique2;
+	ConicClass::Conic conique2;
 	
 	//viewer.push_line(conique.getPoint(0), conique.getPoint(1)-conique.getPoint(0),  200,200,0);
 	
