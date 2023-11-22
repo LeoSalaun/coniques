@@ -3,6 +3,7 @@
 #include "Conic.hpp"
 #include "Geogebra_conics.hpp"
 
+namespace ConicClass{
 Conic::Conic(const std::vector<Eigen::VectorXd> points)
 	: Shape(points) {
 	for (const auto& point : points) {
@@ -10,48 +11,49 @@ Conic::Conic(const std::vector<Eigen::VectorXd> points)
     }
 }
 
-Conic::Conic()
-	: Shape() {}
+	Conic::Conic()
+		: Shape() {}
 
-Conic::~Conic() {
-	m_points.clear();
-}
+	Conic::~Conic() {
+		m_points.clear();
+	}
+
 
 Eigen::MatrixXd Conic::getMatrixFromPoints() const {
 	for (const auto& point : m_points) {
         	assert(point.size() == 2 && "Erreur dans la définition des coordonnées des points");
     	}
 
-	size_t nbPoints = m_points.size();
-	Eigen::MatrixXd A(nbPoints,6);
-	for (size_t i=0 ; i<nbPoints ; i++) {
-		A(i,0) = std::pow(m_points[i](0),2);
-		A(i,1) = m_points[i](0)*m_points[i](1);
-		A(i,2) = std::pow(m_points[i](1),2);
-		A(i,3) = m_points[i](0);
-		A(i,4) = m_points[i](1);
-		A(i,5) = 1; // Coordonnée homogène
+		size_t nbPoints = m_points.size();
+		Eigen::MatrixXd A(nbPoints,6);
+		for (size_t i=0 ; i<nbPoints ; i++) {
+			A(i,0) = std::pow(m_points[i](0),2);
+			A(i,1) = m_points[i](0)*m_points[i](1);
+			A(i,2) = std::pow(m_points[i](1),2);
+			A(i,3) = m_points[i](0);
+			A(i,4) = m_points[i](1);
+			A(i,5) = 1; // Coordonnée homogène
+		}
+		return A;
 	}
-	return A;
-}
 
-Eigen::VectorXd Conic::getConicFromPoints() const {
-	Eigen::MatrixXd A = this->getMatrixFromPoints();
-	std::cout << A << std::endl;
-	Eigen::JacobiSVD<Eigen::MatrixXd> svd (A, Eigen::ComputeThinU | Eigen::ComputeFullV);
-	return svd.matrixV().rightCols (1);
-}
+	Eigen::VectorXd Conic::getConicFromPoints() const {
+		Eigen::MatrixXd A = this->getMatrixFromPoints();
+		std::cout << A << std::endl;
+		Eigen::JacobiSVD<Eigen::MatrixXd> svd (A, Eigen::ComputeThinU | Eigen::ComputeFullV);
+		return svd.matrixV().rightCols (1);
+	}
 
 Eigen::VectorXd Conic::getLineCoeffFromPoints(const Eigen::VectorXd &pt1, const Eigen::VectorXd &pt2) {
 	assert(pt1.size() == 2 && "Erreur dans la définition des coordonnées des points");
     	assert(pt2.size() == 2 && "Erreur dans la définition des coordonnées des points");
 
-	Eigen::VectorXd coeff(2);
-	double m = (pt1(1)-pt2(1))/(pt1(0)-pt2(0));
-	double b = pt1(1)-m*pt1(0);
-	coeff << m,b;
-	return coeff;	
-}
+		Eigen::VectorXd coeff(2);
+		double m = (pt1(1)-pt2(1))/(pt1(0)-pt2(0));
+		double b = pt1(1)-m*pt1(0);
+		coeff << m,b;
+		return coeff;	
+	}
 
 Eigen::VectorXd Conic::getIntersectionFromLines(const Eigen::VectorXd &l1, const Eigen::VectorXd &l2) {
 	assert(l1.size() == 2 && "Erreur dans la définition des coefficients des droites");
@@ -82,7 +84,6 @@ void Conic::addPointsToConic(std::vector<Eigen::VectorXd> listePoints, int nbPoi
 		diag3 = getLineCoeffFromPoints(listePoints[(i+3)%nbPoints], pointIntersect);
 		this->addPoint(getIntersectionFromLines(currentLine, diag3));
 	}
-}
 
 void Conic::display(Viewer_conic &viewer) const {
 	viewer.push_conic(getConicFromPoints(), 0,0,200);
