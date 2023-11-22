@@ -33,9 +33,16 @@ int main()
 	long unsigned int nombreDePoints = 5;
 
 	std::vector<Eigen::VectorXd> listePoints;
-	  
+	
+	int choix;
+	std::cout << "Exemple : ";
+	std::cin >> choix;
+	
+	/*	---- 	      EXAMPLE 1 	----	*/
+	/*	---- Conic built from 5 points  ----	*/
+	
 	ConicClass::Conic conique;
-
+	
 	for (long unsigned int i = 0; i < nombreDePoints; ++i) {
 		Eigen::VectorXd point(2);
 		point << distrib(generator), distrib(generator);
@@ -48,25 +55,54 @@ int main()
 		viewer.push_point(listePoints[i].transpose(), nom, 200,0,0);
 	}
 
-  	assert(listePoints.size() == nombreDePoints && "Erreur dans l'enregistrement des points.");
+  	assert(conique.getPoints().size() == nombreDePoints && "Erreur dans l'enregistrement des points.");
 
   	if (nombreDePoints < 5) {
 		throw std::invalid_argument("Il n'y a pas suffisamment de points pour construire une conique.");
 	}
+		
+	if (choix == 1) conique.display(viewer);
 	
-	ConicClass::Conic conique2;
+	/*	---- 	       EXAMPLE 2         ----	*/
+	/*	---- Conic built from 5 tangents ---- 	*/
 	
-	try {
-  		conique2.addPointsToConic(listePoints, nombreDePoints, viewer);
+	if (choix == 2) {
+		try {
+			ConicClass::Conic conique2;
+			
+	  		conique2.addPointsToConic(listePoints, nombreDePoints, viewer);
+			
+			conique2.display(viewer);
+		}
+		catch (std::invalid_argument e) {
+			std::cerr << "Ajoutez davantage de points à la conique" << std::endl;
+		}
 	}
-	catch (std::invalid_argument e) {
-		std::cerr << "Ajoutez davantage de points à la conique" << std::endl;
-	}
 	
-	//conique2.display(viewer);
+	/*	---- 	           EXAMPLE 3    	 ----	*/
+	/*	---- Conic built from more than 5 points ----	*/
 	
-	for (double i=0. ; i<10 ; i++) { // Tentative d'implémentation des faisceaux
-		Conic conique3 = conique.faisceau(conique2,i);
+	if (choix == 3) {
+		ConicClass::Conic conique3;
+		
+		for (long unsigned int i = 0; i < 2*nombreDePoints; ++i) {
+			Eigen::VectorXd point(2);
+			point << distrib(generator), distrib(generator);
+
+	    		assert(point.size() == 2 && "Erreur dans la définition des coordonnées des points");
+
+			listePoints.push_back(point);
+			conique3.addPoint(point.transpose());
+			std::string nom = "pt" + std::to_string(i+1);
+			viewer.push_point(listePoints[i].transpose(), nom, 200,0,0);
+		}
+
+	  	assert(conique3.getPoints().size() == 2*nombreDePoints && "Erreur dans l'enregistrement des points.");
+
+	  	if (nombreDePoints < 5) {
+			throw std::invalid_argument("Il n'y a pas suffisamment de points pour construire une conique.");
+		}
+		
 		conique3.display(viewer);
 	}
 
