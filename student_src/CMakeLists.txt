@@ -18,14 +18,19 @@ endif()
 
 
 # files to compile
-add_executable(conic src/main.cpp src/Geogebra_conics.cpp src/Geogebra_conics.hpp src/Entry.cpp src/Entry.hpp src/Directory.cpp src/Directory.hpp src/Form.hpp)
+add_executable(conic src/main.cpp src/Geogebra_conics.cpp src/Geogebra_conics.hpp src/Entry.cpp src/Entry.hpp src/Directory.cpp src/Directory.hpp src/Form.cpp src/Form.hpp src/Conic.cpp src/Conic.hpp)
+
+#add_executable(conic)
+
+#file(GLOB_RECURSE SOURCES_FILES CONFIGURE_DEPENDS src/*)
+#target_sources(${PROJECT_NAME} PRIVATE ${SOURCES_FILES})
 
 # compilation options
 target_compile_features(conic PRIVATE cxx_std_11) # use at least c++ 11
 if (MSVC)
     target_compile_options(conic PRIVATE /W3)
 else()
-    target_compile_options(conic PRIVATE -Wall -Wextra -Wpedantic -pedantic-errors)
+    target_compile_options(conic PRIVATE -Wall -Wextra -Wpedantic -pedantic-errors -fpic)
 endif()
 
 # lib include path
