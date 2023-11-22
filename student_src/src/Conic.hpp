@@ -28,6 +28,9 @@ namespace ConicClass{
 		Eigen::VectorXd getIntersectionFromLines(const Eigen::VectorXd &l1, const Eigen::VectorXd &l2);
 		void addPointsToConic(std::vector<Eigen::VectorXd> listePoints, int nbPoints, Viewer_conic &viewer);
 		void display(Viewer_conic &viewer) const override;
-
-	};
+	
+	  Conic &operator*(double alpha) const;
+	  Conic operator+(Conic conique) const;
+  
+  };
 }

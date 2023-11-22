@@ -11,48 +11,6 @@
 #include "Shape.hpp"
 #include "Conic.hpp"
 
-////////////////////////////////////////////
-// Temporary test functions
-
-/*Eigen::MatrixXd getMatrixFromPoints(const std::vector<Eigen::VectorXd> &points) {
-	Eigen::MatrixXd A(points.size(),6);
-	for (size_t i=0 ; i<points.size() ; i++) {
-		A(i,0) = std::pow(points[i](0),2);
-		A(i,1) = points[i](0)*points[i](1);
-		A(i,2) = std::pow(points[i](1),2);
-		A(i,3) = points[i](0);
-		A(i,4) = points[i](1);
-		A(i,5) = 1; // Coordonnée homogène
-	}
-	return A;
-}
-
-Eigen::VectorXd getConicFromPoints(const std::vector<Eigen::VectorXd> &points) {
-	Eigen::MatrixXd A = getMatrixFromPoints(points);
-	std::cout << A << std::endl;
-	Eigen::JacobiSVD<Eigen::MatrixXd> svd (A, Eigen::ComputeThinU | Eigen::ComputeFullV);
-	return svd.matrixV().rightCols (1);
-}*/
-
-Eigen::VectorXd gaussSeidel(const Eigen::MatrixXd &A, const Eigen::VectorXd &b, const uint nbIter)
-{
-	// initial solution 
-	Eigen::VectorXd x(b);
-
-	// iterations
-	for(uint iter=0; iter<nbIter; ++iter)
-	for(int i=0; i<A.rows(); ++i){
-		double sum = 0.0;
-		for(int j=0; j<i; ++j)          sum += A(i,j)*x(j);
-		for(int j=i+1; j<A.cols(); ++j)	sum += A(i,j)*x(j);
-		x(i) = (b(i)-sum)/A(i,i);
-	}
-
-	return x;
-}
-
-////////////////////////////////////////////
-
 int main()
 {
 	// the viewer will open a file whose path is writen in hard (bad!!). 
@@ -82,7 +40,7 @@ int main()
 		Eigen::VectorXd point(2);
 		point << distrib(generator), distrib(generator);
 
-    assert(point.size() == 2);
+    		assert(point.size() == 2 && "Erreur dans la définition des coordonnées des points");
 
 		listePoints.push_back(point);
 		conique.addPoint(point.transpose());
@@ -90,27 +48,27 @@ int main()
 		viewer.push_point(listePoints[i].transpose(), nom, 200,0,0);
 	}
 
-  assert(listePoints.size() == nombreDePoints);
+  	assert(listePoints.size() == nombreDePoints && "Erreur dans l'enregistrement des points.");
 
-  if (nombreDePoints < 5) {
+  	if (nombreDePoints < 5) {
 		throw std::invalid_argument("Il n'y a pas suffisamment de points pour construire une conique.");
 	}
-
-	//conique.display(viewer);
-
-	// draw conic
-	//Eigen::VectorXd conic(6);
-	//conic << -1.4, -0.3, -1, -0.6, 0.0, 0.8;
-	//Eigen::VectorXd conic = getConicFromPoints(listePoints);
-	//viewer.push_conic(conic, 0,0,200);
 	
 	ConicClass::Conic conique2;
 	
-	//viewer.push_line(conique.getPoint(0), conique.getPoint(1)-conique.getPoint(0),  200,200,0);
+	try {
+  		conique2.addPointsToConic(listePoints, nombreDePoints, viewer);
+	}
+	catch (std::invalid_argument e) {
+		std::cerr << "Ajoutez davantage de points à la conique" << std::endl;
+	}
 	
-  conique2.addPointsToConic(listePoints, nombreDePoints, viewer);
-
-	conique2.display(viewer);
+	//conique2.display(viewer);
+	
+	for (double i=0. ; i<10 ; i++) { // Tentative d'implémentation des faisceaux
+		Conic conique3 = conique.faisceau(conique2,i);
+		conique3.display(viewer);
+	}
 
 	// render
 	viewer.display(); // on terminal
