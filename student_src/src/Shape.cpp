@@ -9,11 +9,3 @@ Shape::Shape(const std::vector<Eigen::VectorXd> points)
 Shape::Shape()
 	: m_points()
 {}
-
-//Shape::~Shape(){
-//	m_points.clear();
-//}
-
-//std::vector<Eigen::VectorXd> Shape::getPoints() const {
-//	return m_points;
-//}
